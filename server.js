@@ -47,9 +47,6 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const PORT = process.env.PORT || 5000;
 connectDb();
 
@@ -73,6 +70,9 @@ app.use(express.urlencoded({ limit: "150mb", extended: true }));
 app.use(cookieParser());
 
 app.use("/api", appRoutes);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "../front-end/build")));
 
