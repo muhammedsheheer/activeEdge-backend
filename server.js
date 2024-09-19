@@ -57,7 +57,7 @@ const corsOrigin =
 
 app.use(
 	cors({
-		origin: corsOrigin,
+		origin: "*",
 		credentials: true,
 	})
 );
