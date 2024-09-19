@@ -55,16 +55,9 @@ const corsOrigin =
 		? "https://active-edge-client.onrender.com"
 		: "http://localhost:3000";
 
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		credentials: true,
-// 	})
-// );
-
 app.use(
 	cors({
-		origin: "*",
+		origin: corsOrigin,
 		credentials: true,
 	})
 );
