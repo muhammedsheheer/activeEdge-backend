@@ -40,12 +40,11 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
+import path from "path";
 import appRoutes from "./routes/apiRoutes.js";
 import cookieParser from "cookie-parser";
 import connectDb from "./config/mongodb.js";
 import morgan from "morgan";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const PORT = process.env.PORT || 5000;
 connectDb();
@@ -71,13 +70,11 @@ app.use(cookieParser());
 
 app.use("/api", appRoutes);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, "../front-end/build")));
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "front-end/build")));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "../front-end/build", "index.html"));
+	res.sendFile(path.join(__dirname, "front-end/build", "index.html"));
 });
 
 app.listen(PORT, () => {
