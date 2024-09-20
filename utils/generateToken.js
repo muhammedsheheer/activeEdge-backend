@@ -7,9 +7,16 @@ export const generateToken = (res, user) => {
 		{ expiresIn: "5h" }
 	);
 
+	// res.cookie("jwtToken", token, {
+	// 	httpOnly: true,
+	// 	secure: process.env.NODE_ENV === "production",
+	// 	maxAge: 60 * 60 * 5000,
+	// });
+
 	res.cookie("jwtToken", token, {
 		httpOnly: true,
 		secure: process.env.NODE_ENV === "production",
-		maxAge: 60 * 60 * 5000,
+		maxAge: 5 * 60 * 60 * 1000,
+		sameSite: "None",
 	});
 };
