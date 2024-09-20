@@ -53,7 +53,7 @@ const app = express();
 
 const corsOrigin =
 	process.env.NODE_ENV === "production"
-		? "https://active-edge-client.onrender.com"
+		? "https://active-front-end.vercel.app"
 		: "http://localhost:3000";
 
 app.use(
