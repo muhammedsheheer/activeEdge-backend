@@ -27,6 +27,6 @@ export const generateToken = (res, user) => {
 		secure: process.env.NODE_ENV === "production",
 		maxAge: 5 * 60 * 60 * 1000,
 		sameSite: "None",
-		domain: "https://active-front-end-mohammed-sheheer-cbs-projects.vercel.app",
+		domain: "active-front-end-mohammed-sheheer-cbs-projects.vercel.app",
 	});
 };
