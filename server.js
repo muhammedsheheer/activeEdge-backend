@@ -53,7 +53,7 @@ const app = express();
 
 const corsOrigin =
 	process.env.NODE_ENV === "production"
-		? "https://active-front-end.vercel.app"
+		? "https://active-front-end.vercel.appactive-front-end-mohammed-sheheer-cbs-projects.vercel.app"
 		: "http://localhost:3000";
 
 app.use(
