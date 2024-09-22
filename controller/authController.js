@@ -254,50 +254,6 @@ const verifyOtpAndResetPassword = async (req, res) => {
 	}
 };
 
-// const verifyOtpPassword = async (req, res) => {
-// 	const { email, otp } = req.body;
-
-// 	try {
-// 		// Check if the OTP is valid
-// 		const otpData = await Otp.findOne({ email, otp });
-// 		if (!otpData) {
-// 			return res.status(400).json({ message: "Invalid OTP or OTP expired" });
-// 		}
-
-// 		res.status(200).json({ message: "OTP verified successfully" });
-// 	} catch (error) {
-// 		res.status(500).json({ message: error.message });
-// 	}
-// };
-
-// const resetPassword = async (req, res) => {
-// 	const { email, newPassword, confirmPassword } = req.body;
-
-// 	try {
-// 		if (newPassword !== confirmPassword) {
-// 			return res.status(400).json({ message: "Passwords do not match" });
-// 		}
-
-// 		const otpData = await Otp.findOne({ email });
-// 		if (!otpData) {
-// 			return res.status(400).json({ message: "Invalid or expired OTP" });
-// 		}
-
-// 		const hashPassword = await bcrypt.hash(newPassword, 10);
-
-// 		await User.updateOne(
-// 			{ email: otpData.email },
-// 			{ $set: { password: hashPassword } }
-// 		);
-
-// 		await Otp.deleteOne({ email });
-
-// 		res.status(200).json({ message: "Password reset successful" });
-// 	} catch (error) {
-// 		res.status(500).json({ message: error.message });
-// 	}
-// };
-
 const resendOtpForgotPassword = async (req, res) => {
 	const { email } = req.body;
 

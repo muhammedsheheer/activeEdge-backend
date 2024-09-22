@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 router.post("/createBrand", isAuth, isAuthAdmin, createBrand);
-router.get("/getbrands", isAuth, isAuthAdmin, getBrands);
+router.get("/getbrands", getBrands);
 router.put("/edit-brand/:brandId", isAuth, isAuthAdmin, editBrand);
 router.delete("/delete-brand/:brandId", isAuth, isAuthAdmin, removeBrand);
 
