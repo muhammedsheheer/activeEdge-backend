@@ -13,7 +13,7 @@ const app = express();
 
 const corsOrigin =
 	process.env.NODE_ENV === "production"
-		? "https://active-front-end-mohammed-sheheer-cbs-projects.vercel.app"
+		? "www.activeedge.shop"
 		: "http://localhost:3000";
 
 app.use(
