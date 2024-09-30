@@ -5,7 +5,7 @@ dotenv.config();
 
 const redirectUri =
 	process.env.NODE_ENV === "production"
-		? "https://www.activeedge.shop"
+		? "https://active-front-end-mohammed-sheheer-cbs-projects.vercel.app"
 		: "http://localhost:3000";
 
 export const client = new OAuth2Client(
