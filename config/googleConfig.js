@@ -5,7 +5,7 @@ dotenv.config();
 
 const redirectUri =
 	process.env.NODE_ENV === "production"
-		? "www.activeedge.shop"
+		? "https://www.activeedge.shop"
 		: "http://localhost:3000";
 
 export const client = new OAuth2Client(

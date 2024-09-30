@@ -13,12 +13,12 @@ const app = express();
 
 const corsOrigin =
 	process.env.NODE_ENV === "production"
-		? "www.activeedge.shop"
+		? "https://www.activeedge.shop"
 		: "http://localhost:3000";
 
 app.use(
 	cors({
-		origin: corsOrigin,
+		origin: "https://www.activeedge.shop",
 		credentials: true,
 	})
 );
